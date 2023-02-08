@@ -55,12 +55,8 @@ const App = () => {
 
   useEffect(() => {
     checkWinner();
-    
+    checkGameEnded(); 
   }, [gameData]);
-
-  useEffect(() => {
-    checkGameEnded();
-  }, [winningCombo])
 
 
   const checkGameEnded = () => {
