@@ -73,8 +73,6 @@ const App = () => {
    
   }
 
-  
-
   const checkWinner = () => {
     
     let winner = null;
@@ -112,6 +110,7 @@ const resetGame = () => {
   setGameData([0, 0, 0, 0, 0, 0, 0, 0, 0]);
   setWinningCombo(null);
   setGameEnd(false);
+  setWhichWinner('');
 }
 
   return (
