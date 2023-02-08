@@ -22,6 +22,8 @@ const winningCombinations = [
 
 
 
+
+
 const App = () => {
 
   const [gameData, setGameData] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0])
@@ -53,14 +55,20 @@ const App = () => {
 
   useEffect(() => {
     checkWinner();
-    checkGameEnded();
+    
   }, [gameData]);
+
+  useEffect(() => {
+    checkGameEnded();
+  }, [winningCombo])
 
 
   const checkGameEnded = () => {
-    if(gameData.every((item) => item !== 0)) {
-      setWhichWinner('Deu velha!')
-      setGameEnd(true);
+    if(!winningCombo) {
+        if(gameData.every((item) => item !== 0)) {
+          setWhichWinner('Deu velha!')
+          setGameEnd(true);
+        }
     }
    
   }
